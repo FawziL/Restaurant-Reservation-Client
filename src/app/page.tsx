@@ -1,5 +1,9 @@
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
+import AboutSection from "@/components/AboutSection"
+import MenuSection from "@/components/MenuSection"
+import Footer from "@/components/Footer"
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -30,30 +34,23 @@ export default function Home() {
                         Descubre nuestra deliciosa comida y haz tu reserva en
                         línea.
                     </p>
-                    <button className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">
+                    <Link
+                        href="/reservas"
+                        className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+                    >
                         Reservar ahora
-                    </button>
+                    </Link>
                 </div>
             </main>
 
-            <section className="about">
-                <h3>ABOUT US</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Animi nemo ad quo fugit natus veritatis aperiam in, nobis
-                    hic molestias architecto assumenda distinctio odit rem amet
-                    optio ipsum, quos ducimus!
-                </p>
-            </section>
+            {/* About */}
+            <AboutSection />
 
-            <section className="specialties">
-                <h3>Osas SPECIALTIES</h3>
-                <p>Descubre nuestras especialidades únicas.</p>
-            </section>
+            {/* Menu */}
+            <MenuSection />
 
-            <footer className="footer">
-                <p>&copy;. Todos los derechos reservados.</p>
-            </footer>
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }
